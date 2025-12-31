@@ -1,30 +1,32 @@
 import { motion } from "framer-motion";
-import { item } from "./animations";
 
-export default function ProjectCard({ title, desc, tech }) {
+const item = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0 },
+};
+
+export default function ProjectCard({ project, onClick }) {
   return (
     <motion.div
       variants={item}
-      whileHover={{ y: -6 }}
-      className="rounded-2xl border border-slate-200 dark:border-slate-800
-                 bg-white dark:bg-slate-900 p-6 shadow-sm
-                 transition-shadow hover:shadow-lg"
+      whileHover={{ scale: 1.03 }}
+      onClick={onClick}
+      className="cursor-pointer rounded-xl overflow-hidden
+      bg-white dark:bg-slate-900
+      border border-slate-200 dark:border-slate-800
+      shadow-sm hover:shadow-lg transition"
     >
-      <h3 className="text-lg font-semibold mb-2">{title}</h3>
-      <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">
-        {desc}
-      </p>
+      <img
+        src={project.image}
+        alt={project.title}
+        className="h-40 w-full object-cover"
+      />
 
-      <div className="flex flex-wrap gap-2">
-        {tech.map((t) => (
-          <span
-            key={t}
-            className="text-xs px-2 py-1 rounded-full
-                       bg-slate-100 dark:bg-slate-800"
-          >
-            {t}
-          </span>
-        ))}
+      <div className="p-5">
+        <h3 className="font-semibold text-lg mb-2">{project.title}</h3>
+        <p className="text-sm text-slate-600 dark:text-slate-400 line-clamp-2">
+          {project.description}
+        </p>
       </div>
     </motion.div>
   );

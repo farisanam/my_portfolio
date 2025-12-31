@@ -3,20 +3,24 @@ import Hero from "./components/Hero";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import PageWrapper from "./components/PageWrapper";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <main className="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
-      
-      {/* Navbar Sticky */}
+    <main className="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100">
       <Navbar />
 
-      {/* Content */}
-      <PageWrapper>
+      <div className="pt-20">
         <Hero />
+        <About />
         <Experience />
         <Projects />
-      </PageWrapper>
+        <Contact />
+      </div>
+
+        <Footer />
     </main>
   );
 }

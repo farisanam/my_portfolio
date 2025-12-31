@@ -38,10 +38,13 @@ export default function Hero() {
             </a>
 
             <a
-              href="/cv.pdf"
-              className="px-6 py-3 rounded-xl font-medium border border-slate-300 text-slate-700 hover:bg-slate-100 transition dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800"
+            href="/cv/Farisan_Amanuddin_CV.pdf"
+            target="_blank"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-lg
+                        bg-slate-900 text-white dark:bg-white dark:text-slate-900
+                        font-medium hover:opacity-90 transition"
             >
-              Download CV
+            Download CV
             </a>
           </div>
         </motion.div>
